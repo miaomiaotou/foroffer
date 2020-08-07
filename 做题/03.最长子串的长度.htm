@@ -20,12 +20,14 @@
                 }
                 else{
                     while(set.has(s[i])){
-                        set
+                        set.delete(s[j])
+                        j++;
                     }
+                    set.add(a[i])
                 }
             }
 
-    
+       return(maxlength)
   
 }
     </script>

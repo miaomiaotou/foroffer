@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var longestPalindrome = function(s) {
+            if(s.length<2){
+                return s
+            }
+        let start = 0;
+        let maxlength = 1;
+        // +1是计算长度时候的要求
+       function expandArroudCenter(left,right){
+           while(left>=0 && right<s.length && s[left]==s[right]){
+               if(right-left+1>maxlength){
+                   maxlength =right-left+1;
+                   start = left;
+                   
+               }
+               left--;
+               right++;
+           }
+
+       }
+
+    for(let i =0;i<s.length;i++){
+        expandArroudCenter(i-1,i+1);
+        expandArroudCenter(i,i+1);
+
+    }
+    return s.substring(start,start+maxlength)
+    
+
+};
+    </script>
+</body>
+</html>
+
+
+
+1.从中心扩散的思想
+
+2.从中心扩散有两种情况
+3. 定义两个变量
+
+
+
